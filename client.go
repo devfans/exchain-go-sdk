@@ -42,6 +42,10 @@ type Client struct {
 	modules map[string]gosdktypes.Module
 }
 
+func (c *Client) Codec() *codec.Codec {
+	return c.cdc
+}
+
 // NewClient creates a new instance of Client
 func NewClient(config gosdktypes.ClientConfig) Client {
 	cdc := gosdktypes.NewCodec()
